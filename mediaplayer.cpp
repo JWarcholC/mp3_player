@@ -17,7 +17,7 @@ MediaPlayer::MediaPlayer(QWidget *parent) :
     });
 
     connect(media, &QMediaPlayer::durationChanged, [&](qint64 dur) {
-        ui->progressBar->setMaximum(dur);
+        ui->progressBar->setMaximum(dur*2);
     });
 }
 

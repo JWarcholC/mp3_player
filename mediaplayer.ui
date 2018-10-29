@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>BogiMP3Player</string>
+   <string>BogiPlayer</string>
   </property>
   <widget class="QPushButton" name="browse">
    <property name="geometry">

@@ -37,6 +37,7 @@ private:
 
     void setTitle(QString &text = title);
     inline void setFileName(QString text) { file = text; }
+
 };
 
 #endif // MEDIAPLAYER_H

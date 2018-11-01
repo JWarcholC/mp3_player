@@ -13,11 +13,11 @@ MediaPlayer::MediaPlayer(QWidget *parent) :
     media = new QMediaPlayer(this);
 
     connect(media, &QMediaPlayer::positionChanged, [&](qint64 pos) {
-        ui->progressBar->setValue(pos);
+        ui->progressBar->setValue(pos*2);
     });
 
     connect(media, &QMediaPlayer::durationChanged, [&](qint64 dur) {
-        ui->progressBar->setMaximum(dur*2);
+        ui->progressBar->setMaximum(dur);
     });
 }
 

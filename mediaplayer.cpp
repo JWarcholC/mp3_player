@@ -50,7 +50,7 @@ void MediaPlayer::on_pause_clicked()
 void MediaPlayer::on_stop_clicked()
 {
     media->stop();
-    setTitle();
+    setTitle("");
 }
 
 void MediaPlayer::on_mute_clicked()
@@ -70,8 +70,13 @@ void MediaPlayer::on_volume_valueChanged(int value)
     media->setVolume(value);
 }
 
-void MediaPlayer::setTitle(QString &text) {
-    this->setWindowTitle(text);
+void MediaPlayer::setTitle(const QString text) {
+    this->setWindowTitle(text.isEmpty() ? title : splitTitle(text));
 }
 
+QString MediaPlayer::splitTitle(QString text) {
+    QStringList list;
 
+    list = text.split(QRegExp(SPLIT_SIGN));
+    return list[list.size() - 1];
+}

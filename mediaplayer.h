@@ -4,6 +4,12 @@
 #include <QWidget>
 #include <QMediaPlayer>
 
+#ifdef __WIN32__
+    #define SPLIT_SIGN "\\"
+#else
+    #define SPLIT_SIGN "/"
+#endif
+
 namespace Ui {
 class MediaPlayer;
 }
@@ -35,8 +41,9 @@ private:
     static QString title;
     QString file;
 
-    void setTitle(QString &text = title);
+    void setTitle(const QString text);
     inline void setFileName(QString text) { file = text; }
+    QString splitTitle(QString text);
 
 };
 
